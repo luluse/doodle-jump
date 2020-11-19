@@ -74,15 +74,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     upTimerId = setInterval(function(){
       doodlerBottomSpace += 20
       doodler.style.bottom = doodlerBottomSpace + 'px'
-      if(doodlerBottomSpace > startPoint + 200){
+      if(doodlerBottomSpace > (startPoint + 200)){
         fall()
+        isJumping = false
       }
     }, 30)
   }
 
   function fall(){
-    clearInterval(upTimerId)
     isJumping = false
+    clearInterval(upTimerId)
     downTimerId = setInterval(function (){
       doodlerBottomSpace -= 5
       doodler.style.bottom = doodlerBottomSpace + 'px'
@@ -92,11 +93,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
       platforms.forEach(platform =>{
         if(
-          (doodlerBottomSpace >= platform.bottom) && (doodlerBottomSpace <= platform.bottom + 15) && ((doodlerLeftSpace + 60) >= platform.left) && (doodlerLeftSpace <= (platform.left + 85)) && !isJumping
+          (doodlerBottomSpace >= platform.bottom) && (doodlerBottomSpace <= (platform.bottom + 15)) && ((doodlerLeftSpace + 60) >= platform.left) && (doodlerLeftSpace <= (platform.left + 85)) && !isJumping
         ) {
           console.log('landed')
           startPoint = doodlerBottomSpace
           jump()
+          isJumping = true
         }
       })
     }, 30)
@@ -108,19 +110,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
     while (grid.firstChild){
       grid.removeChild(grid.firstChild)
     }
-    grid.innerHTML = score
+    grid.innerHTML = 'Game Over ' + ' Score: ' + score 
+    
     clearInterval(upTimerId)
     clearInterval(downTimerId)
     clearInterval(leftTimeId)
     clearInterval(rightTimeId)
   }
 
-  function control(){
-    if(event.key === "ArrowLeft"){
+  function control(e){
+    doodler.style.bottom = doodlerBottomSpace + 'px'
+    if(e.key === "ArrowLeft"){
       moveLeft()
-    } else if (event.key === "ArrowRight"){
+    } else if (e.key === "ArrowRight"){
       moveRight()
-    } else if (event.key === "ArrowUp"){
+    } else if (e.key === "ArrowUp"){
       moveStraight()
     }
   }
@@ -145,7 +149,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       isGoingLeft = false
     }
     isGoingRight = true
-    leftTimeId = setInterval(function (){
+    rightTimeId = setInterval(function (){
       if (doodlerLeftSpace <= 340){
       doodlerLeftSpace +=5
       doodler.style.left = doodlerLeftSpace + 'px'
@@ -165,13 +169,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
       createPlatforms()
       createDoodler()
       setInterval(movePlatforms, 30)
-      jump()
+      jump(startPoint)
       document.addEventListener('keyup', control)
     }
   }
   //attach to a button
   start()
-
-
 
 })
