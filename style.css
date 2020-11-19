@@ -1,0 +1,27 @@
+.grid{
+  width: 400px;
+  height: 600px;
+  background-color: rgb(210, 210, 210);
+  position: relative;
+  font-size: 60px;
+  text-align: center;
+  color: rgb(2, 2, 134);
+  background-image: url('grid.jpg');
+}
+
+.doodler{
+  width: 60px;
+  height: 60px;
+  /* height: 85px; */
+  /* background-color: rgb(146, 185, 19); */
+  position: absolute;
+  background-image: url('snail.png');
+}
+
+.platform{
+  width: 85px;
+  height: 15px;
+  background-color: rgba(251, 5, 157, 0.69);
+  position: absolute;
+  background-image: url('platform.jpg');
+}
