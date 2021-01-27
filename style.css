@@ -25,3 +25,10 @@
   position: absolute;
   background-image: url('platform.jpg');
 }
+
+h2 {
+  color: rgb(251, 5, 157);;
+  size: 40px;
+  margin-left: 150px;
+}
+

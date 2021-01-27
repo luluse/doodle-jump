@@ -1,5 +1,6 @@
 # doodle-jump
-Doodle Jump Game
+
+Thi app is a Doodle Jump like game
 
 ## Author 
 Lulu Sevignon
