@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://jumping-snail.netlify.app/">
+  <a href="https://jumping-snail.netlify.app/" target="_blank">
     <img alt="snail" src="./snail.png" width="60" />
   </a>
 </p>
 
-# doodle-jump
+# Snail Jump
 
 This app is a Doodle Jump like game.
 
