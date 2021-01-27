@@ -18,7 +18,7 @@ This app is a Doodle Jump like game.
 Lulu Sevignon
 
 ## Built 
-using [Ania Kubow tutorial](https://www.youtube.com/watch?v=8xPsg6yv7TU)
+following [Ania Kubow tutorial](https://www.youtube.com/watch?v=8xPsg6yv7TU)
 
 ## Technologies
 - Vanilla Javascript
