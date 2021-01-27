@@ -1,6 +1,18 @@
+<p align="center">
+  <a href="https://jumping-snail.netlify.app/">
+    <img alt="snail" src="./snail.png" width="60" />
+  </a>
+</p>
+
 # doodle-jump
 
-Thi app is a Doodle Jump like game
+This app is a Doodle Jump like game.
+
+### [Click here to play](https://jumping-snail.netlify.app/)
+
+## How to play?
+- Use arrow keys to move Snail around and jump over the platforms
+- Reload page to start a new game
 
 ## Author 
 Lulu Sevignon
